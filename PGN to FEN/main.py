@@ -11,7 +11,6 @@ def parse_pgn(file_path):
     parser = PGNParser(stream)
     tree = parser.game()
     
-    # Opcjonalnie, możesz wyświetlić drzewo parsowania
     print(Trees.toStringTree(tree, None, parser))
     
     return tree
@@ -48,10 +47,8 @@ def board_to_fen(board):
 
 def next_state(current_fen, move):
     # Implementacja logiki aktualizacji stanu planszy
-    # Na przykład, zmiana pozycji figur, usuwanie zbitych figur itp.
     board = fen_to_board(current_fen)
     
-    # Przetwarzanie ruchu (upraszczenie, szczegóły wymagają bardziej rozbudowanej logiki)
     if isinstance(move, list):
         piece = move[0]
         if len(move) == 3:
@@ -84,13 +81,9 @@ def main(pgn_file, output_dir):
 
     tree = parse_pgn(pgn_file)
 
-    # Przykład przechodzenia drzewa parsowania
-    # Możesz napisać dodatkowy kod, który przetworzy drzewo parsowania
-    # i wygeneruje odpowiednie stany planszy w notacji FEN
 
     print("Parsowanie zakończone")
 
-# Uruchomienie programu
 if __name__ == "__main__":
     if len(sys.argv) > 1:
         pgn_file = sys.argv[1]
