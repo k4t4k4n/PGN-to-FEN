@@ -312,6 +312,14 @@ class PGNListener(ParseTreeListener):
             if ctx.TAKES():
                 self.current_half_move_number = 0
                 move_data["is_capture"] = True
+                if ctx.square_destination().getText() == 'a1':
+                    self.Q_castle = False
+                elif ctx.square_destination().getText() == 'a8':
+                    self.K_castle = False
+                elif ctx.square_destination().getText() == 'h1':
+                    self.q_castle = False
+                elif ctx.square_destination().getText() == 'h8':
+                    self.k_castle = False
 
             if ctx.pawn_move():
                 self.current_half_move_number = 0

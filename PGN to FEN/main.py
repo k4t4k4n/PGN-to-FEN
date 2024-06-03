@@ -20,5 +20,4 @@ def parse_pgn():
 
 if __name__ == '__main__':
     moves = parse_pgn()
-    for move in moves:
-        print(move)
+    #for move in moves: print(move)
